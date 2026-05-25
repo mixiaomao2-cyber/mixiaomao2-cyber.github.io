@@ -5,19 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    content {
+    div {
       display: none;
     }
   </style>
 </head>
 
 <body>
-  <div id="1" class="content">
+  <div id="0000">
     <p>Hello, world!!!</p>
   </div>
-  <input id=""
+  <div id="0001">
+    <p>咪小猫是good。</p>
+  </div>
+  <div id="0002">
+    <p>You're bad.</p>
+  </div>
   <script>
-    ;
+    document.addEventListener('DOMContentLoaded', () => {
+      let user_key = prompt("请输入提取码:");
+      if (user_key != null) {
+        let doc = document.getElementById(user_key);
+        doc.style.display = '';
+      }
+    });
   </script>
 </body>
 </html>
