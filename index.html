@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <title>Hello</title>
+  <title>咪小猫的网页</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:description" content="咪小猫的网页">
+  <meta property="og:title" content="咪小猫的网页">
   <meta property="og:description" content="输入提取码即可查看富文本">
+  <meta property="og:url" content="https://mixiaomao2-cyber.github.io/">
   <style>
     div {
       display: none;
@@ -18,27 +19,26 @@
     <p>Hello, world!!!</p>
   </div>
   <div id="0001">
-    <p>咪小猫是good。</p>
+    <p>咪小猫是good</p>
   </div>
   <div id="0002">
     <p>You're bad.</p>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-    let user_key = prompt("请输入提取码:");
+      let user_key = prompt("请输入提取码:");
   
-    if (user_key === null) {
-      // 用户取消了
-      alert("已取消");
-    } else {
-      let doc = document.getElementById(user_key);
-      if (doc) {
-        doc.style.display = 'block';  // 或 'flex' 等
-      } else {
-        alert("提取码错误");
-      }
-    }
-  });
-</script>
+      if (user_key === null) {
+        alert("已取消");
+        } else {
+          let doc = document.getElementById(user_key);
+          if (doc) {
+            doc.style.display = 'block';
+          } else {
+            alert("提取码错误");
+          }
+        }
+    });
+  </script>
 </body>
 </html>
