@@ -11,6 +11,12 @@
     div {
       display: none;
     }
+    @media (prefers-color-scheme: dark) {
+      html, body {
+        background-color: black;
+        color: white
+      }
+    }
   </style>
 </head>
 
@@ -70,7 +76,9 @@
   <div id="math_0001">
     <p>众所周知: <math><msqrt><mo>-</mo><mi>1</mi></msqrt><mo>=</mo><mi>i</mi></math></p>
     <p>但是,你知道吗?实际上<math><mi>i</mi></math>还可以表示旋转</p>
-    <p>例如:</p>
+  </div>
+  <div id="math_0002">
+    <!-- No thing ... -->
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
