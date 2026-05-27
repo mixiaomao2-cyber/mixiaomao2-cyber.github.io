@@ -12,10 +12,20 @@
     div {
       display: none;
     }
+    details {
+      border: 2px solid black;
+      padding: 10px;
+      border-radius: 8px;
+    }
     @media (prefers-color-scheme: dark) {
       html, body {
         background-color: black;
         color: white
+      }
+      details {
+        border: 2px solid white;
+        padding: 10px;
+        border-radius: 8px;
       }
     }
   </style>
@@ -70,7 +80,7 @@
           <mo>=</mo>
           <mn>1</mn>
       </math>
-      <p>因此 <math><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover><mo>=</mo><mn>1</mn></math> ,简洁明了</p>
+      <p class="text-align: center;">因此 <math><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover><mo>=</mo><mn>1</mn></math> ,简洁明了</p>
     </details>
     <p>你猜对了吗?</p>
   </div>
