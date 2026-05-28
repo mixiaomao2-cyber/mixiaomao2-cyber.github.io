@@ -8,58 +8,11 @@
   <meta property="og:description" content="输入提取码即可查看富文本">
   <meta property="og:url" content="https://mixiaomao2-cyber.github.io/">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <style>
-    div {
-      display: none;
-    }
-    details {
-      border: 2px solid black;
-      padding: 10px;
-      border-radius: 8px;
-    }
-    @media (prefers-color-scheme: dark) {
-      html, body {
-        background-color: black;
-        color: white
-      }
-      details {
-        border: 2px solid white;
-        padding: 10px;
-        border-radius: 8px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div id="0000">
-    <p>Hello, world!!!</p>
-  </div>
-  <div id="math_0000">
-    <p>问一个问题: <math><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover></math>等不等于<math><mn>1</mn></math>?</p>
-    <details>
-      <summary>查看证明方式(这里只提供一种)</summary>
-      <math display="block"><mtext>设</mtext><mi>x</mi><mo>=</mo><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover></math>
-      <br>
-      <math display="block"><mn>10</mn><mi>x</mi><mo>=</mo><mn>9.</mn><mover><mn>9</mn><mo>.</mo></mover></math>
-      <br>
-      <math display="block"><mn>10</mn><mi>x</mi><mo>-</mo><mi>x</mi><mo>=</mo><mn>9.</mn><mover><mn>9</mn><mo>.</mo></mover><mo>-</mo><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover></math>
-      <br>
-      <math display="block"><mn>9</mn><mi>x</mi><mo>=</mo><mn>9</mn></math>
-      <br>
-      <math display="block"><mi>x</mi><mo>=</mo><mn>1</mn></math>
-      <p style="text-align: center;">因此 <math><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover><mo>=</mo><mn>1</mn></math> ,简洁明了</p>
-    </details>
-    <p>你猜对了吗?</p>
-  </div>
-  <div id="math_0001">
-    <p>众所周知: <math><msqrt><mo>-</mo><mi>1</mi></msqrt><mo>=</mo><mi>i</mi></math></p>
-    <p>但是,你知道吗?实际上<math><mi>i</mi></math>还可以表示旋转</p>
-  </div>
-  <div id="math_0002">
-    <p>你知道吗?假如想让一个数a(任意位数),后面增加1位数k(0≤k≤9),假如这个数为x,则 x = 10a + k</p>
-    <p>拓展:如果知道k的位数b,则x = 10<sup>b</sup>a + k</p>
-  </div>
+  <iframe id="content" src="about:blank"></iframe>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       let user_key = prompt("请输入提取码:");
@@ -67,9 +20,16 @@
       if (user_key === null) {
         alert("已取消");
         } else {
-          let doc = document.getElementById(user_key);
-          if (doc) {
-            doc.style.display = 'block';
+          let iframe = document.getElementById(content);
+          if (iframe) {
+            if (user_key.split('_')[0] == "math") {
+              iframe.src = "math.html";
+              let iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+              let doc = iframeDoc.getElementById(user_key.split('_')[1]);
+              if (doc) {
+                doc.style.display = "blcok";
+              }
+            }
           } else {
             alert("提取码错误");
           }
