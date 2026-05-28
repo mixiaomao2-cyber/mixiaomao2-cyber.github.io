@@ -1,0 +1,19 @@
+div {
+  display: none;
+}
+details {
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: black;
+    color: white
+  }
+  details {
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 8px;
+  }
+}
