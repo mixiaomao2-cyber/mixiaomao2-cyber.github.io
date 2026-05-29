@@ -31,7 +31,7 @@
       const iframe = document.getElementById("content");
       if (!iframe) return;
       
-      iframe.src = "${parts[0]}.html";
+      iframe.src = `${parts[0]}.html`;
       iframe.style.display = "block";
       
       // 等待 iframe 加载完成
