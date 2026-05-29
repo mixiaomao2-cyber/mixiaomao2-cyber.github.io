@@ -7,77 +7,92 @@
 
 <body>
   <div id="0000">
-    <p>问一个问题: <math><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover></math>等不等于<math><mn>1</mn></math>?</p>
+    <p>问一个问题: <matd><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover></matd>等不等于<matd><mn>1</mn></matd>?</p>
     <details>
       <summary>查看证明方式(这里只提供一种)</summary>
-      <math display="block"><mtext>设</mtext><mi>x</mi><mo>=</mo><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover></math>
+      <matd display="block"><mtext>设</mtext><mi>x</mi><mo>=</mo><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover></matd>
       <br>
-      <math display="block"><mn>10</mn><mi>x</mi><mo>=</mo><mn>9.</mn><mover><mn>9</mn><mo>.</mo></mover></math>
+      <matd display="block"><mn>10</mn><mi>x</mi><mo>=</mo><mn>9.</mn><mover><mn>9</mn><mo>.</mo></mover></matd>
       <br>
-      <math display="block"><mn>10</mn><mi>x</mi><mo>-</mo><mi>x</mi><mo>=</mo><mn>9.</mn><mover><mn>9</mn><mo>.</mo></mover><mo>-</mo><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover></math>
+      <matd display="block"><mn>10</mn><mi>x</mi><mo>-</mo><mi>x</mi><mo>=</mo><mn>9.</mn><mover><mn>9</mn><mo>.</mo></mover><mo>-</mo><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover></matd>
       <br>
-      <math display="block"><mn>9</mn><mi>x</mi><mo>=</mo><mn>9</mn></math>
+      <matd display="block"><mn>9</mn><mi>x</mi><mo>=</mo><mn>9</mn></matd>
       <br>
-      <math display="block"><mi>x</mi><mo>=</mo><mn>1</mn></math>
-      <p style="text-align: center;">因此 <math><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover><mo>=</mo><mn>1</mn></math> ,简洁明了</p>
+      <matd display="block"><mi>x</mi><mo>=</mo><mn>1</mn></matd>
+      <p style="text-align: center;">因此 <matd><mn>0.</mn><mover><mn>9</mn><mo>.</mo></mover><mo>=</mo><mn>1</mn></matd> ,简洁明了</p>
     </details>
     <p>你猜对了吗?</p>
   </div>
   <div id="0001">
-    <p>众所周知: <math><msqrt><mo>-</mo><mi>1</mi></msqrt><mo>=</mo><mi>i</mi></math></p>
-    <p>但是,你知道吗?实际上<math><mi>i</mi></math>还可以表示旋转</p>
+    <p>众所周知: <matd><msqrt><mo>-</mo><mi>1</mi></msqrt><mo>=</mo><mi>i</mi></matd></p>
+    <p>但是,你知道吗?实际上<matd><mi>i</mi></matd>还可以表示旋转</p>
   </div>
   <div id="0002">
     <p>你知道吗?假如想让一个数a(任意位数),后面增加1位数k(0≤k≤9),假如这个数为x,则 x = 10a + k</p>
     <p>拓展:如果知道k的位数b,则x = 10<sup>b</sup>a + k</p>
+    <hr>
+    <p>测试一下?</p>
+    <form oninput="
+      b.value = Math.abs(parseInt(k.value)).toString().length;
+      res.value = `10^${b.value}*${a.value}+${k.value}`
+      x.value = Math.pow(10, parseInt(b.value)) * parseInt(a.value) + k.value;
+      ">
+      <p>
+        原数字(a) = <input type="number id="a"><br>
+        要追加的数(k) = <input type="number" id="k"><br>
+        k的位数(b)(自动计算) = <output name="b" for="k"></output><br>
+        算式: <output name="res" for="a k"></output><br>
+        结果(x) = <output name="x" for="a k"></output>
+      </p>
+    </form>
   </div>
   <div id="0003">
-    <p>1 + 2 + 3 + 4 + 5 + ...... + ∞ = <math><mo>-</mo><mfrac><mn>1</mn><mn>12</mn></mfrac></math></p>
+    <p>1 + 2 + 3 + 4 + 5 + ...... + ∞ = <matd><mo>-</mo><mfrac><mn>1</mn><mn>12</mn></mfrac></matd></p>
     <p>是不是很神奇?</p>
   </div>
   <div id="0004">
     <p>所有的希腊字母:</p>
     <table>
-      <thead>
+      <tdead>
         <tr>
           <th>希腊字母编号</th>
           <th>小写希腊字母</th>
           <th>大写希腊字母</th>
           <th>对应的英文单词</th>
         </tr>
-      </thead>
+      </tdead>
       <tbody>
-        <tr><th>01</th><th>α</th><th>A</th><th>alpha</th></tr>
-        <tr><th>02</th><th>β</th><th>B</th><th>beta</th></tr>
-        <tr><th>03</th><th>γ</th><th>Γ</th><th>gamma</th></tr>
-        <tr><th>04</th><th>δ</th><th>Δ</th><th>delta</th></tr>
-        <tr><th>05</th><th>ε</th><th>E</th><th>epsilon</th></tr>
-        <tr><th>06</th><th>ζ</th><th>Z</th><th>zeta</th></tr>
-        <tr><th>07</th><th>η</th><th>H</th><th>eta</th></tr>
-        <tr><th>08</th><th>θ</th><th>Θ</th><th>theta</th></tr>
-        <tr><th>09</th><th>ι</th><th>Ι</th><th>iota</th></tr>
-        <tr><th>10</th><th>κ</th><th>K</th><th>kappa</th></tr>
-        <tr><th>11</th><th>λ</th><th>Λ</th><th>lambda</th></tr>
-        <tr><th>12</th><th>μ</th><th>Μ</th><th>mu</th></tr>
-        <tr><th>13</th><th>ν</th><th>N</th><th>nu</th></tr>
-        <tr><th>14</th><th>ξ</th><th>Ξ</th><th>xi</th></tr>
-        <tr><th>15</th><th>o</th><th>O</th><th>omicron</th></tr>
-        <tr><th>16</th><th>π</th><th>Π</th><th>pi</th></tr>
-        <tr><th>17</th><th>ρ</th><th>P</th><th>rho</th></tr>
-        <tr><th>18</th><th>σ/ς</th><th>Σ</th><th>sigma</th></tr>
-        <tr><th>19</th><th>τ</th><th>T</th><th>tau</th></tr>
-        <tr><th>20</th><th>υ</th><th>Y</th><th>upsilon</th></tr>
-        <tr><th>21</th><th>φ</th><th>Φ</th><th>phi</th></tr>
-        <tr><th>22</th><th>χ</th><th>X</th><th>chi</th></tr>
-        <tr><th>23</th><th>ψ</th><th>Ψ</th><th>psi</th></tr>
-        <tr><th>24</th><th>ω</th><th>Ω</th><th>omega</th></tr>
+        <tr><td>01</td><td>α</td><td>A</td><td>alpha</td></tr>
+        <tr><td>02</td><td>β</td><td>B</td><td>beta</td></tr>
+        <tr><td>03</td><td>γ</td><td>Γ</td><td>gamma</td></tr>
+        <tr><td>04</td><td>δ</td><td>Δ</td><td>delta</td></tr>
+        <tr><td>05</td><td>ε</td><td>E</td><td>epsilon</td></tr>
+        <tr><td>06</td><td>ζ</td><td>Z</td><td>zeta</td></tr>
+        <tr><td>07</td><td>η</td><td>H</td><td>eta</td></tr>
+        <tr><td>08</td><td>θ</td><td>Θ</td><td>tdeta</td></tr>
+        <tr><td>09</td><td>ι</td><td>Ι</td><td>iota</td></tr>
+        <tr><td>10</td><td>κ</td><td>K</td><td>kappa</td></tr>
+        <tr><td>11</td><td>λ</td><td>Λ</td><td>lambda</td></tr>
+        <tr><td>12</td><td>μ</td><td>Μ</td><td>mu</td></tr>
+        <tr><td>13</td><td>ν</td><td>N</td><td>nu</td></tr>
+        <tr><td>14</td><td>ξ</td><td>Ξ</td><td>xi</td></tr>
+        <tr><td>15</td><td>o</td><td>O</td><td>omicron</td></tr>
+        <tr><td>16</td><td>π</td><td>Π</td><td>pi</td></tr>
+        <tr><td>17</td><td>ρ</td><td>P</td><td>rho</td></tr>
+        <tr><td>18</td><td>σ/ς</td><td>Σ</td><td>sigma</td></tr>
+        <tr><td>19</td><td>τ</td><td>T</td><td>tau</td></tr>
+        <tr><td>20</td><td>υ</td><td>Y</td><td>upsilon</td></tr>
+        <tr><td>21</td><td>φ</td><td>Φ</td><td>phi</td></tr>
+        <tr><td>22</td><td>χ</td><td>X</td><td>chi</td></tr>
+        <tr><td>23</td><td>ψ</td><td>Ψ</td><td>psi</td></tr>
+        <tr><td>24</td><td>ω</td><td>Ω</td><td>omega</td></tr>
       </tbody>
       <tfoot>
         <tr colspan="3">
-          <th>共计<b>24</b>个</th>
+          <td>共计<b>24</b>个希腊字母</td>
         </tr>
         <tr>
-          <th>注: 第 18 个字母 sigma 的小写有两种形式：词中/词首用 σ，词尾用 ς。</th>
+          <td>注: 第 18 个字母 sigma 的小写有两种形式：词中/词首用 σ，词尾用 ς。</td>
         </tr>
       </tfoot>
     </table>
