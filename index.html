@@ -15,25 +15,43 @@
   <iframe id="content" src="about:blank" style="width:100vw;height:100vh;border:none;position:fixed;top:0;left:0;"></iframe>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      let user_key = prompt("请输入提取码:");
-  
-      if (user_key === null) {
-        alert("已取消");
-      } else {
-        let iframe = document.getElementById("content");
-        if (iframe) {
-          if (user_key.split('_')[0] == "math") {
-            iframe.src = "math.html";
-            let iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-            let doc = iframeDoc.getElementById(user_key.split('_')[1]);
-            if (doc) {
-              doc.style.display = "blcok";
-            } else {
-              alert("提取码错误");
-            }
-          }
-        }
+      const userKey = prompt("请输入提取码:");
+      
+      if (!userKey) {
+        alert("已取消或输入为空");
+        return;
       }
+      
+      const parts = userKey.split('_');
+      if (parts[0] !== "math" || !parts[1]) {
+        alert("提取码错误");
+        return;
+      }
+      
+      const iframe = document.getElementById("content");
+      if (!iframe) return;
+      
+      iframe.src = "math.html";
+      iframe.style.display = "block";
+      
+      // 等待 iframe 加载完成
+      iframe.onload = () => {
+        try {
+          const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+          const targetElement = iframeDoc.getElementById(parts[1]);
+            
+          if (targetElement) {
+            targetElement.style.display = "block";
+            // 可选：隐藏其他不需要的内容
+          } else {
+            alert("未找到对应内容");
+          }
+        } catch (e) {
+          // 跨域情况下会报错
+          console.error("无法访问 iframe 内容:", e);
+          alert("无法访问内容，可能存在跨域限制");
+        }
+      };
     });
   </script>
 </body>
