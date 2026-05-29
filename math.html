@@ -28,21 +28,21 @@
     <p>但是,你知道吗?实际上<matd><mi>i</mi></matd>还可以表示旋转</p>
   </div>
   <div id="0002">
-    <p>你知道吗?假如想让一个数a(任意位数),后面增加1位数k(0≤k≤9),假如这个数为x,则 x = 10a + k</p>
+    <p>你知道吗?假如想让一个数a(任意位数,且a≥0),后面增加1位数k(0≤k≤9),假如这个数为x,则 x = 10a + k</p>
     <p>拓展:如果知道k的位数b,则x = 10<sup>b</sup>a + k</p>
     <hr>
     <p>测试一下?</p>
     <form oninput="
       b.value = Math.abs(parseInt(k.value)).toString().length;
-      res.value = `10^${b.value}*${a.value}+${k.value}`
-      x.value = Math.pow(10, parseInt(b.value)) * parseInt(a.value) + k.value;
+      res.value = `10^${b.value}*${a.value}+${k.value}`;
+      x.value = Math.pow(10, parseInt(b.value)) * parseInt(a.value) + parseInt(k.value);
       ">
       <p>
-        原数字(a) = <input type="number" id="a"><br>
-        要追加的数(k) = <input type="number" id="k"><br>
-        k的位数(b)(自动计算) = <output name="b" for="k"></output><br>
-        算式: <output name="res" for="a k"></output><br>
-        结果(x) = <output name="x" for="a k"></output>
+        原数字(a) = <input type="number" id="a" name="a"><br>
+        要追加的数(k) = <input type="number" id="k" name="k" min="0" step="1"><br>
+        k的位数(b)(自动计算) = <output name="b"></output><br>
+        算式: <output name="res"></output><br>
+        结果(x) = <output name="x"></output>
       </p>
     </form>
   </div>
