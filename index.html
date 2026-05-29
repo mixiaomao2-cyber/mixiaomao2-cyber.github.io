@@ -22,8 +22,8 @@
         return;
       }
       
-      const parts = userKey.split('_');
-      if (parts[0] !== "math" || !parts[1]) {
+      const parts = userKey.split(' ');
+      if (!parts[0] || !parts[1]) {
         alert("提取码错误");
         return;
       }
@@ -31,7 +31,7 @@
       const iframe = document.getElementById("content");
       if (!iframe) return;
       
-      iframe.src = "math.html";
+      iframe.src = "${parts[0]}.html";
       iframe.style.display = "block";
       
       // 等待 iframe 加载完成
