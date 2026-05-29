@@ -12,28 +12,28 @@
 </head>
 
 <body>
-  <iframe id="content" src="about:blank"></iframe>
+  <iframe id="content" src="about:blank" style="width:100vw;height:100vh;border:none;position:fixed;top:0;left:0;"></iframe>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       let user_key = prompt("请输入提取码:");
   
       if (user_key === null) {
         alert("已取消");
-        } else {
-          let iframe = document.getElementById("content");
-          if (iframe) {
-            if (user_key.split('_')[0] == "math") {
-              iframe.src = "math.html";
-              let iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-              let doc = iframeDoc.getElementById(user_key.split('_')[1]);
-              if (doc) {
-                doc.style.display = "blcok";
-              }
+      } else {
+        let iframe = document.getElementById("content");
+        if (iframe) {
+          if (user_key.split('_')[0] == "math") {
+            iframe.src = "math.html";
+            let iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            let doc = iframeDoc.getElementById(user_key.split('_')[1]);
+            if (doc) {
+              doc.style.display = "blcok";
+            } else {
+              alert("提取码错误");
             }
-          } else {
-            alert("提取码错误");
           }
         }
+      }
     });
   </script>
 </body>
