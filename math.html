@@ -34,14 +34,14 @@
     <p>测试一下?</p>
     <form oninput="
       b.value = Math.abs(parseInt(k.value)).toString().length;
-      res.value = `10^${b.value}*${a.value}+${k.value}`;
+      this.querySelector('#res').innerHtml = `10^<sup>${b.value}</sup>×${a.value}+${k.value}`;
       x.value = Math.pow(10, parseInt(b.value)) * parseInt(a.value) + parseInt(k.value);
       ">
       <p>
         原数字(a) = <input type="number" id="a" name="a"><br>
         要追加的数(k) = <input type="number" id="k" name="k" min="0" step="1"><br>
         k的位数(b)(自动计算) = <output name="b"></output><br>
-        算式: <output name="res"></output><br>
+        算式: <span id="res"></span><br>
         结果(x) = <output name="x"></output>
       </p>
     </form>
