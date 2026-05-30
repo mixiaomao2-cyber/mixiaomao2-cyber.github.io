@@ -34,7 +34,7 @@
     <p>测试一下?</p>
     <form oninput="
       b.value = Math.abs(parseInt(k.value)).toString().length;
-      this.querySelector('#res').innerHtml = `10^<sup>${b.value}</sup>×${a.value}+${k.value}`;
+      this.querySelector('#res').innerHTML = `10<sup>${b.value}</sup>×${a.value}+${k.value}`;
       x.value = Math.pow(10, parseInt(b.value)) * parseInt(a.value) + parseInt(k.value);
       ">
       <p>
